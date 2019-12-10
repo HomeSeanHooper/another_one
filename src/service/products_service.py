@@ -10,6 +10,14 @@ log = logging.getLogger(__name__)
 
 app.products_dao = None
 
+
+@app.before_first_request
+def before_first_request_func():
+    if not app.products_dao:
+        return jsonify(status="Hey! This is your first request, so I will be loading up "+
+                       "some nice data for you. Check back in a little while."), 200
+
+
 def get_dao():
     if not app.products_dao:
         app.products_dao = ProductsDAO(ingest_defaults())
