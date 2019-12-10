@@ -1,6 +1,6 @@
 How to run:
 
-`python.37 src/products_service.py`
+`python.37 service/products_service.py`
 
 What I could have improved with more time:
 
